@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="calculator">
+            <!DOCTYPE html>
+            <html>
+
+            <head>
+                <title>Calculator</title>
+            </head>
+
+            <body>
+                <form>
+                    <div class="display">
+                        <input type="text" name="display">
+                    </div>
+                    <div>
+                        <input type="button" value="AC" id="btnAC">
+                        <input type="button" value="Del" id="btnDel">
+                        <input type="button" value="." id="btnDot">
+                        <input type="button" value="/" id="btnDivide">
+                    </div>
+                    <div>
+                        <input type="button" value="7" class="num-btn">
+                        <input type="button" value="8" class="num-btn">
+                        <input type="button" value="9" class="num-btn">
+                        <input type="button" value="*" class="operator-btn">
+                    </div>
+                    <div>
+                        <input type="button" value="4" class="num-btn">
+                        <input type="button" value="5" class="num-btn">
+                        <input type="button" value="6" class="num-btn">
+                        <input type="button" value="-" class="operator-btn">
+                    </div>
+                    <div>
+                        <input type="button" value="1" class="num-btn">
+                        <input type="button" value="2" class="num-btn">
+                        <input type="button" value="3" class="num-btn">
+                        <input type="button" value="+" class="operator-btn">
+                    </div>
+                    <div>
+                        <input type="button" value="00" class="num-btn">
+                        <input type="button" value="0" class="num-btn">
+                        <input type="button" value="=" id="equal">
+                    </div>
+                </form>
+
+                <script>
+                    const displayInput = document.querySelector("input[name='display']");
+                    const numButtons = document.querySelectorAll(".num-btn");
+                    const operatorButtons = document.querySelectorAll(".operator-btn");
+                    const btnAC = document.getElementById("btnAC");
+                    const btnDel = document.getElementById("btnDel");
+                    const btnDot = document.getElementById("btnDot");
+                    const btnDivide = document.getElementById("btnDivide");
+                    const equalButton = document.getElementById("equal");
+
+                    numButtons.forEach(button => {
+                        button.addEventListener("click", () => {
+                            displayInput.value += button.value;
+                        });
+                    });
+
+                    operatorButtons.forEach(button => {
+                        button.addEventListener("click", () => {
+                            displayInput.value += button.value;
+                        });
+                    });
+
+                    btnAC.addEventListener("click", () => {
+                        displayInput.value = "";
+                    });
+
+                    btnDel.addEventListener("click", () => {
+                        displayInput.value = displayInput.value.slice(0, -1);
+                    });
+
+                    btnDot.addEventListener("click", () => {
+                        displayInput.value += ".";
+                    });
+
+                    btnDivide.addEventListener("click", () => {
+                        displayInput.value += "/";
+                    });
+
+                    equalButton.addEventListener("click", () => {
+                        displayInput.value = eval(displayInput.value);
+                    });
+                </script>
+            </body>
+
+            </html>
+
+        </div>
+
+    </div>
+</body>
+
+</html>
